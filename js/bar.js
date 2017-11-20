@@ -1,4 +1,3 @@
-
 var canvas = document.getElementById('myChart');
 var myBarChart;
 var data = {
