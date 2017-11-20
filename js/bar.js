@@ -1,5 +1,6 @@
 
 var canvas = document.getElementById('myChart');
+var myBarChart;
 var data = {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
@@ -52,10 +53,14 @@ function onemonth() {
     }
   }
 }
-  var myBarChart = Chart.Bar(canvas,{
+  if(myBarChart){
+    myBarChart.destroy();
+  }
+  myBarChart = Chart.Bar(canvas,{
   	data:data1,
     options:option
   });
+
 
 }
 
@@ -84,16 +89,22 @@ function twomonth() {
           }
       ]
     }
-
-  var myBarChart = Chart.Bar(canvas,{
-  	data:data1,
+ if(myBarChart){
+   myBarChart.destroy();
+  }
+  myBarChart = Chart.Bar(canvas,{
+    data:data1,
     options:option
   });
+
 }
 
 function chartbar(){
-  var myBarChart = Chart.Bar(canvas,{
-    data:data,
-    options:option
+   myBarChart = Chart.Bar(canvas,{
+     data:data,
+     options:option
   });
+
+
 }
+
